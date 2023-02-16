@@ -18,11 +18,11 @@ public class Bugs {
 		try {
 			Document doc = Jsoup.connect("https://music.bugs.co.kr/chart/track/realtime/total").get();
 			Elements ranking = doc.select("div.ranking strong"); // 랭킹
-			Elements name = doc.select("p.title"); // 랭킹
-			Elements artist = doc.select("p.artist"); // 랭킹
-			Elements album = doc.select("a.album"); // 랭킹
+			Elements name = doc.select("p.title"); // 제목
+			Elements artist = doc.select("p.artist"); // 가수
+			Elements album = doc.select("a.album"); // 앨범명
 
-			for (int i = 0; i <= 100; i++) {
+			for (int i = 0; i <= 100; i++) { //1위 부터 100위까지
 				try {       
 					MusicVO mvo = new MusicVO();
 
